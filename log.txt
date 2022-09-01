@@ -1,0 +1,61 @@
+    1  exit
+    2  pwd
+    3  mkdir praccomp
+    4  ls
+    5  cd praccomp/
+    6  ls
+    7  touch test.txt
+    8  ls
+    9  ls -la
+   10  ls ..
+   11  ls ./../
+   12  ls -l
+   13  ls -lah
+   14  echo $PATH
+   15  echo $HOME
+   16  var = echo=' "Hello"'
+   17  var = 'echo "hello"'
+   18  less test.txt
+   19  nano test.txt
+   20  less test.txt
+   21  ls -lh
+   22  rm test.txt
+   23  ls
+   24  touch test.txt
+   25  mkdir blah
+   26  ls
+   27  rm blah
+   28  rmdir blah
+   29  ls
+   30  mkdir blah
+   31  touch blah/test2.txt
+   32  rmdir blah
+   33  cd
+   34  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   35  ls
+   36  bash Miniconda3-latest-Linux-x86_64.sh 
+   37  conda init
+   38  exit
+   39  conda init
+   40  quit
+   41  exit
+   42  conda install mamba -c conda-forge
+   43  mamba
+   44  clear
+   45  mamba install htop
+   46  mamba install htop -c conda-forge
+   47  htop
+   48  ls
+   49  cd praccomp/
+   50  git
+   51  git clone https://github.com/joynerco22/pract-comp-2022csj.git
+   52  ls
+   53  cd pract-comp-2022csj/
+   54  nano README.md
+   55  git config --global user.email "coryjoyner526@gmail.com"
+   56  get config --glocal user.name "joynerco22"
+   57  git config --global user.name "joynerco22"
+   58  git commit -m "Added README.md"
+   59  git push
+   60  history
+   61  history > log.txt
