@@ -86,3 +86,9 @@ content cell 1 | content cell 2
 content column 1 | content column 2
 
 
+## EMOJI
+
+:spider:
+:+1:
+:+2:
+:tongue:
