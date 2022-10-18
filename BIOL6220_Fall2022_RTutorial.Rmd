@@ -1,8 +1,10 @@
 ---
 title: "BIOL 6220 Notebook"
 output:
-  pdf_document: default
+  html_document:
+    df_print: paged
   html_notebook: default
+  pdf_document: default
 ---
 
 # R Basic
@@ -418,5 +420,168 @@ f2[f2 == 'a']
 
 ```{r}
 f2[f2 %in% c('a','c')]
+```
+
+
+
+
+
+
+
+### Matrices Resumed
+
+```{r}
+set.seed(65)
+m <- matrix(rnorm(6*4), ncol=4, nrow=6)
+m
+```
+
+```{r}
+m[3:4, c(3,1)]
+```
+
+```{r}
+m[,c(3,4)]
+```
+###Lists Again
+```{r}
+xlist <- list(a="BIOL6220",b=seq(1,10,by = 0.5), data="Grade")
+xlist
+```
+
+```{r}
+xlist[1:2]
+```
+
+```{r}
+xlist['a']
+```
+
+```{r}
+xlist[['a']]
+```
+
+```{r}
+xlist['b']
+```
+```{r}
+xlist[['b']]
+```
+
+```{r}
+xlist$b
+```
+
+### Data Frames Revisited 
+
+
+```{r}
+gp <- read.csv('./data/forest_area_sq_km.csv')
+```
+
+
+
+```{r}
+head(gp, n=10L)
+```
+
+
+```{r}
+head(gp[3],n=10)
+```
+
+
+```{r}
+nrow(gp)
+
+```
+
+
+```{r}
+head(gp[["country"]], 10L)
+```
+
+```{r}
+gp$X2001 
+```
+
+
+```{r}
+gp[1:3, 2:5]
+```
+
+```{r}
+gp[ which(gp$X1989 <= 100 & gp$X2019 >= 100),]
+```
+
+### Conditionals and Flow 
+
+
+
+
+
+
+
+
+
+```{r}
+n <- 10
+
+if(n < 10) { 
+  print("n is less than 10")
+  
+} else if (n >10) { 
+    print("n is greater than 10")
+}else { 
+    "n is equal to 10"
+  }
+```
+
+```{r}
+
+
+for (n in seq(0,20)) {
+  if(n < 10) { 
+    print("n is less than 10")
+  
+  } else if (n >10) { 
+      print("n is greater than 10")
+  }else { 
+      "n is equal to 10"
+  }
+}  
+```
+
+```{r}
+g <- 0
+
+while (g<=10) {
+  print(paste(g, "is less than or equal to 10"))
+  g <- g+1 
+}
+```
+
+## Plotting and Figures
+
+```{r}
+#install.packages("ggplot2")
+```
+
+
+```{r}
+library(ggplot2)
+```
+
+
+
+
+```{r}
+forestdata <- read.csv('data/forest_area_sq_km.csv')
+
+head(forestdata)
+```
+
+```{r}
+ggplot(data=forestdata, mapping=aes(x=X1989, y=X2019)) + geom_point()
 ```
 
