@@ -585,3 +585,31 @@ head(forestdata)
 ggplot(data=forestdata, mapping=aes(x=X1989, y=X2019)) + geom_point()
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
