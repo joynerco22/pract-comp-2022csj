@@ -1008,3 +1008,72 @@ habitat.tgreater <- t.test(spider.gen$left.bulb, alternative = "greater")
 habitat.tgreater
 ```
 
+
+c. Analysis of Variance (ANOVA)
+
+```{r}
+gen.lm <- lm(spider.gen$left.bulb~spider.gen$habitat)
+summary(gen.lm)
+```
+```{r}
+anova(gen.lm)
+```
+
+```{r}
+gen.anova <- aov(spider.gen$left.bulb~spider.gen$habitat)
+summary(gen.anova)
+```
+
+```{r}
+gapminder.lifeexp.continent.anova <- aov(gapminder$lifeExp~gapminder$continent)
+summary(gapminder.lifeexp.continent.anova)
+```
+
+```{r}
+tukey.two.way <- TukeyHSD(gapminder.lifeexp.continent.anova)
+tukey.two.way
+```
+d. Analysis of Covariance (ANCOVA)
+
+
+```{r}
+boxplot(spider.gen$left.bulb~spider.gen$habitat)
+```
+
+```{r}
+gen.ancova <- lm(spider.gen$left.bulb~spider.gen$habitat*spider.gen$carapace.length)
+summary(gen.ancova)
+```
+
+```{r}
+gapminder.lifeexp.continent.gdp.ancova <- aov(gapminder$lifeExp~gapminder$continent+gapminder$gdpPercap)
+summary(gapminder.lifeexp.continent.gdp.ancova)
+```
+
+```{r}
+posthoc.gapminder.ancova
+```
+
+3. Principal Component Analysis 
+
+```{r}
+sp.matrix <- with(spider.gen, cbind(left.bulb,right.bulb,carapace.length,leg4.length))
+sp.matrix
+```
+
+```{r}
+sp.pca <- princomp(sp.matrix, cor=TRUE)
+summary(sp.pca)
+```
+
+```{r}
+loadings(sp.pca)
+```
+
+```{r}
+biplot(sp.pca)
+```
+```{r}
+sp.pca$scores
+```
+
